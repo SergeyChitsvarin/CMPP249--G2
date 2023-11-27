@@ -18,6 +18,22 @@ app.get("/", (req,res) =>{
 	res.sendFile("styles")
 });
 
+app.get("/contact", (req,res) =>{ 
+	res.sendFile("contact")
+	res.sendFile("styles")
+});
+
+app.get("/packages", (req,res) =>{ 
+	res.sendFile("packages")
+	res.sendFile("styles")
+});
+
+app.get("/registration", (req,res) =>{ 
+	res.sendFile("registration")
+	res.sendFile("styles")
+});
+
+
 app.use((req,res, next) =>{
 	res.status(404);
 	res.sendFile("404.html", { root: path.join(__dirname, "views") })
