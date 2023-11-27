@@ -4,9 +4,9 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "views"), { extensions: ["html", "htm"]  }), next);
-app.use(express.static(path.join(__dirname, "public"), {extensions: ["css","js"]}), next);
-app.use(express.static(path.join(__dirname, "media"), {extensions: ["gif","jpg", "png"]}), next);
+app.use(express.static(path.join(__dirname, "views"), { extensions: ["html", "htm"]  }));
+app.use(express.static(path.join(__dirname, "public"), {extensions: ["css","js"]}));
+app.use(express.static(path.join(__dirname, "media"), {extensions: ["gif","jpg", "png"]}));
 
 app.listen(8000, (err) =>{
 	if(err) throw err;
