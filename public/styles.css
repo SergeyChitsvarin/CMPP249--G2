@@ -1,0 +1,54 @@
+body {
+	background-color: #fff421;
+	background-image: url("bg.jpg");
+	background-size: 1000px;
+	line-height: 1.2;
+}
+h1{
+	display: block;
+	font-size: 3em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+dl {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+dt {
+	display: block;
+}
+dd{
+	display: block;
+	margin-left: 40px;
+}
+textarea {
+  resize: none;
+}
+.navbuttons { 
+	overflow: auto;
+	text-align: center;
+	margin: 0;
+	padding-top: 0;
+	background-color: #fff421;
+}
+
+.indeximages img{
+	width: auto;
+	height: 250px;
+}
+
+.headerbar {
+	text-align: center;
+	background-color: #fff421;
+	overflow: auto;
+}
+
+.pagecontent{
+	background-color: #c7fff1;
+	width: 70%;
+	border: 2px solid blue;
+}
