@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel Experts</title>
+
+        <link rel="stylesheet" href="../public/homePageStyle.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Ephesis&display=swap" rel="stylesheet" />
+        
+    </head>
+    <header>
+        <div class="headText">
+            <img src="../Media/Logo.png" alt="Logo for our company" />
+            <h1>Welcome to Travel Experts</h1>
+            <h1 class="vacation">Your Dream Vacation Starts Here </h1>
+        </div>
+        <!--images-->
+    </header>
+    <body>
+        <nav>
+            <ul type="none" class="menu">
+                <li class="menuItem"><a href="homePage.html" class="active">Home Page</a> </li>
+                <li class="menuItem"><a href="contactUs.html" class="inActive">Contacts</a> </li>
+                <li class="menuItem"><a href="VacationPackages.html" class="inActive">Browse Vacation Packages</a> </li>
+                <li class="menuItem"><a href="customerRegistration.html" class="inActive">Register</a> </li>
+            </ul>
+        </nav>
+        <br><br>
+        <div class ="loginButtons">
+            <ul type="none" class="menu">
+                <li class="menuItem"><a href="#" onclick="registerScreen()"class="inActive">Register</a> </li>
+                <li class="menuItem"><a href="#" onclick="loginScreen()" class="inActive">Login</a> </li>
+            </ul>  
+        </div>
+        <h1>Your Account..</h1>
+        <div class="popup">
+            <h1>Register an Account</h1>
+            <form method="get" action="bouncer.php" class="formClass" onSubmit="return validateForm(this);">
+				<input type="text" id="firstname" name="fname" placeholder="First Name" onfocus="displayText('pfname')"/><input type="text" id="lastname" name="lname" placeholder="Last Name" onfocus="displayText('plname')"/><br>
+                <input type="text" id="city" name="city" placeholder="City" onfocus="displayText('pfname')"/><select name="prov" onfocus="displayText('pprov')">
+						<option value="AB">Alberta</option>
+						<option value="SK">Saskatchewan</option>
+						<option value="YK">Yukon</option>
+					</select>   
+				<br><input type="text" id="streetaddress" name="streetaddress" placeholder="Street Address" onfocus="displayText('pstreetaddress')"/><input type="text" id="pcode" name="pcode" size=10 placeholder="Postal Code" onfocus="displayText('ppcode')"/><br>
+                <div class="verticleLabel">
+                    <label for='name'>Name:</label>
+                    <input type='text' id='name' />
+                </div>
+                    
+				<button type="submit">Submit</button>
+				<button type="reset" onclick="return confirm('Did you really want to reset?')">Clear</button>
+			</form>
+        </div>
+        <h3></h3>
+        <ul class="factsList">
+            <li class="fact"><p>Gives you detailed information about your travel bookings, including past trips.</p> </li>
+            <li class="fact"><p>Easily book your dream vacations and personalize it with related services.</p> </li>
+            <li class="fact"><p>Earn rewards and enjoy targeted offers to make your next trip as affordable as ever.</p></li>
+        </ul>
+    </body>
+    <footer>
+        <p>this page is copyright claimed by TravelExperts 2023 &copy;</p>
+    </footer>
+
+</html>

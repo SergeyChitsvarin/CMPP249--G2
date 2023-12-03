@@ -40,6 +40,35 @@ li.menuItem a{
     font-family: 'Ephesis', cursive;
 }
 
+.verticleLabel {
+    height: 50px;
+    background: grey;
+    display: flex;
+    align-items: center
+}
+
+.popup {    /*https://stackoverflow.com/a/22278778*/
+    position: fixed;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,.9);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(255, 208, 0);
+    width: 70%;
+    height: 60%;
+    text-align: center;
+    z-index: 1000;
+}
+.popup * {
+    padding: 5px;
+    
+}
+.formClass{
+    text-align: left;
+
+}
 .headText img {
     float: left;
     height: 200px;
