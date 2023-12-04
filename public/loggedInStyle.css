@@ -1,0 +1,21 @@
+footer{background-color: #8D5DA2; color: #ffffff; padding: 10px;}
+header {background-color: #8D5DA2; color: #ffffff; height: 200px;}
+nav{display: inline;}
+/* header, footer and menu styling.*/
+ul.menu{margin:0; padding: 0; overflow: hidden;}
+li.menuItem {float: left;}
+li.menuItem a{display: block; color: white; text-align: center; padding: 14px 30px; text-decoration: none;}
+
+.active{background-color: #245f0b;}
+.inActive:hover{background-color: #245f0b;}
+.inActive {background-color:#72A25D;}
+
+.vacation{font-family: 'Edu TAS Beginner', cursive; font-family: 'Ephesis', cursive;}
+
+.headText img {float: left; height: 200px; width: 200px;}
+.headText h1 {position: relative; text-align: center;}
+
+/* logged in page styling*/
+
+.loggedMessage{float:right; color: aqua;}
+
