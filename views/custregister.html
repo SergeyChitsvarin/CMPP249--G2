@@ -23,11 +23,11 @@
                 var userId;
                 con.connect(function(err) {
                     if (err) throw err;
-                    var querytext = "SELECT CustomerId FROM customers WHERE CustUsername = '"+tryUsername+"' AND CustPassword = '"+tryPassword+"'"
+                    var querytext = "SELECT CustomerId FROM customers WHERE CustUsername = '"+tryUsername+"' AND CustPassword = '"+tryPassword+"'";
                     con.query(querytext, function (err, result, fields) {
                         if (err) throw err;
-                        userId = result[0]
-                        console.log(userId)
+                        userId = result[0];
+                        console.log(userId);
                     });
                 });
                 if(userId){
@@ -36,28 +36,50 @@
                     
                 }
             }
-            
+            function validateUsername(tryUsername){
+                var mysql = require('mysql');
+                var con = mysql.createConnection({
+                host: "localhost",
+                user: "traveldbadmin",
+                password: "tdba123",
+                database: "travelexperts"
+                });
+                con.connect(function(err) {
+                    if (err) throw err;
+                    var querytext = "SELECT CustomerId FROM customers WHERE CustUsername = '"+tryUsername+"'";
+                    con.query(querytext, function (err, result, fields) {
+                        if (err) throw err;
+                        if(!result.length){
+                            return 1
+                        } else{
+                            return 0
+                        }
+                    });
+                });
+            }
             function validateForm(myform){
 				const checkForms = [];
                 var errorMessage = "";
-				checkForms.Push(document.getElementById("pcode"))
-				checkForms.Push(document.getElementById("fname"))
-                checkForms.Push(document.getElementById("lname"))
-                checkForms.Push(document.getElementById("city"))
-                checkForms.Push(document.getElementById("prov"))
-                checkForms.Push(document.getElementById("streetaddress"))
-                checkForms.Push(document.getElementById("custemail"))
-                checkForms.Push(document.getElementById("custtel"))
-                checkForms.Push(document.getElementById("username"))
-                checkForms.Push(document.getElementById("password"))
-                checkForms.Push(document.getElementById("confpassword"))
+				checkForms.Push(document.getElementById("pcode"));
+				checkForms.Push(document.getElementById("fname"));
+                checkForms.Push(document.getElementById("lname"));
+                checkForms.Push(document.getElementById("city"));
+                checkForms.Push(document.getElementById("prov"));
+                checkForms.Push(document.getElementById("streetaddress"));
+                checkForms.Push(document.getElementById("custemail"));
+                checkForms.Push(document.getElementById("custtel"));
+                checkForms.Push(document.getElementById("username"));
+                checkForms.Push(document.getElementById("password"));
+                checkForms.Push(document.getElementById("confpassword"));
                 for(const elem of checkForms){ // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
                     if (elem.value == ""){
-                        errorMessage += "Please enter a " + elem.name + ".<br>"
+                        errorMessage += "Please enter a " + elem.name + ".<br>";
                         elem.style.borderColor = "red";
 					}
                 }
-                
+                if(!validateUsername(document.getElementById("username").value)){
+                    errorMessage += "That username is already in use. Please select<br>";
+                }
                 var postalField = document.getElementById("pcode");
 				var exp = new RegExp(/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i); // regex with canadian postal code validation
 				var postal = postalField.value.trim().toUpperCase();				
