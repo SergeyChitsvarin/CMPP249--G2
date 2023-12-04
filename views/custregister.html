@@ -10,6 +10,33 @@
         
         <script type = "text/javascript">
             
+            function validateLogin(loginForm){
+                var mysql = require('mysql');
+                var con = mysql.createConnection({
+                host: "localhost",
+                user: "traveldbadmin",
+                password: "tdba123",
+                database: "travelexperts"
+                });
+                var tryUsername;
+                var tryPassword;
+                var userId;
+                con.connect(function(err) {
+                    if (err) throw err;
+                    var querytext = "SELECT CustomerId FROM customers WHERE CustUsername = '"+tryUsername+"' AND CustPassword = '"+tryPassword+"'"
+                    con.query(querytext, function (err, result, fields) {
+                        if (err) throw err;
+                        userId = result[0]
+                        console.log(userId)
+                    });
+                });
+                if(userId){
+
+                } else {
+                    
+                }
+            }
+            
             function validateForm(myform){
 				const checkForms = [];
                 var errorMessage = "";
