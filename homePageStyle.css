@@ -1,0 +1,130 @@
+header {background-color: #8D5DA2; color: #ffffff; height: 200px;}
+nav{
+    float: end;
+    left: 0;
+    width: 100%;
+    background-color:#72A25D;
+
+}
+footer{background-color: #8D5DA2; color: #ffffff; padding: 10px;}
+html,body { height:100%; }
+body, header{
+    margin:0;
+    padding:0;
+    margin-top:0;
+    overflow:hidden;
+}
+/*ttps://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black
+*/
+ul.menu{margin:0; padding: 0; overflow: hidden;}
+li.menuItem {float: left;}
+li.menuItem a{display: block; color: white; text-align: center; padding: 14px 30px; text-decoration: none;}
+
+.active{background-color: #245f0b;}
+.inActive:hover{background-color: #245f0b;}
+.inActive {background-color:#72A25D;}
+
+.vacation{font-family: 'Edu TAS Beginner', cursive; font-family: 'Ephesis', cursive;}
+
+.pageContent{
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.loginlink{
+    background-color: #ffffff;
+
+}
+.closebutton{
+    position:absolute;
+    color:#ff0000;
+    text-shadow: 2px 2px #000000;
+    font-size: 20px;
+    z-index: 1002;
+    right: 10px;
+    top: 5px;
+
+}
+.popup {    /*https://stackoverflow.com/a/22278778*/
+    position: fixed;
+    border-radius: 5px;
+    background-color: rgba(193, 192, 233, 0.9);
+    color: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 500px;
+    z-index: 1002;
+    box-shadow: 2px 5px;
+    visibility:hidden;
+}
+
+
+.popup hr{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+.popup * {
+    padding: 5px;
+    
+}
+.formClass{
+    text-align: left;
+
+}
+.headText img {
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+}
+.headText h1 {position: relative; text-align: center;}
+
+.slideshow{position: relative;height:50%; width:50%; float:right;}
+
+header {
+    height:200px;
+}
+
+.screenblur{
+    position:absolute;
+    backdrop-filter: brightness(60%) blur(3px);
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    z-index: 1001;
+    visibility:hidden;
+}
+
+.requirementspopup{
+    position: fixed;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    top: 60%;
+    left: 90%;
+    text-align: left;
+    z-index: 1002;
+    width: 45%;
+    max-width: 170px;
+    font-size: smaller;
+    visibility: hidden;
+    box-shadow: 2px 5px;
+}
+.mySlide img{width: 100%; height:400px;   display: flex; flex-direction: column; align-items: flex-end;}
+.mySlide p{font-family: 'Edu TAS Beginner', cursive; font-family: 'Ephesis', cursive; font-size: 30px; margin:5px;}
+
+.explanationText {text-align: left; font-size: 30px; width:50%;}
