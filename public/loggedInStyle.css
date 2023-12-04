@@ -17,5 +17,10 @@ li.menuItem a{display: block; color: white; text-align: center; padding: 14px 30
 
 /* logged in page styling*/
 
-.loggedMessage{float:right; color: aqua;}
+.loggedMessage{float:right; color:#8D5DA2;}
+
+.loggedMenuItem{height:100px; width: 100px; margin:5px; border:none; background-color: #8D5DA2; color:#ffffff;}
+.loggedMenuItem:hover{background-color: #4f2860;}
+
+
 
