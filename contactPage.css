@@ -1,14 +1,21 @@
+body{
+    /*background: linear-gradient(to right,#bdc2e8,#e6dee9);*/
+    /*background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);*/
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+}
+
 .nav{
     width: 100%;
     height: 60px;
-    background-color:#8D5DA2;
+    background-image: linear-gradient(-225deg, #D7FFFE 0%, #FFFEFF 100%);
 
 }
 
 .header-left{
     float: left;
     line-height: 55px;
-    color: #72A25D;
+    color: black;
+    font-size: 30px;
 }
 
 .shell {
@@ -39,5 +46,15 @@
 
 .text h1 {
     color: #72A25D;
+}
+
+.submit {
+    background: linear-gradient(to right,#65CBF7,#B3A5FC);;
+    color: #9C3493;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    height: 30px;
+    width: 20%;
 }
 
