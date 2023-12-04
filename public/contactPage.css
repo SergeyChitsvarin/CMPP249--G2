@@ -20,12 +20,12 @@
     z-index: -1;
 }
 
-.text {
+.shell text {
     height: 50vh;
     background-color: black;
 }
 
-.text h1 {
+.shell text h1 {
     color: #72A25D;
 }
 
