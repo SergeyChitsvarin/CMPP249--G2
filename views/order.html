@@ -9,16 +9,12 @@
     <div class="container">
     <h1>Order Form</h1>
     <form method="post" action="bouncer.php">
-        First Name <input type="text" name="fname" required="required" /><br/>
-        Last Name <input type="text" name="lname" required="required" /><br/>
-        Phone Number <input type="text" name="phnumber" required="required" /><br/>
-        Email <input type="email" name="email" pattern="[A-Za-z0-9_.]\w+@(\w+\.)+[A-Za-z]{2,}" required="required" /><br/>
         Travel Date <input type="date" name="Date of Departure/w+@(/w+/.)+[a-z]" required="required"/><br/>
 		Number of travelers <input type="number" name="Travelers" min="1" max="5" /><br/>
         Card Type <br/>
 		Visa <input type="radio" name="Card Type" value="v"/>
-		MasterCard <input type="radio" name="Card Type" value="m"/>
-		American Express <input type="radio" name="Card Type" value="a"/><br/>
+		Master Card <input type="radio" name="Card Type" value="m"/>
+		American Express <input type="radio" name="Card Type" value="a"/><br/></br>
 
         <button type="reset">Clear</button>
         <button type="submit">Order</button>
