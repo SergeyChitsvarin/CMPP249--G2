@@ -37,10 +37,12 @@
     vertical-align: bottom;
 }
 
-.tile button{
+.tile input{
+    position: relative;
     display: block;
     float: right;
     margin-right: 10px;
+    bottom: 50px;
 }
 
 
