@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vacation Packages</title>
+    <link rel="stylesheet" href="/vp.css">
+</head>
+
+<body>
+    <h1 align="center">Vacation Packages</h1>
+    <div class="img1" align="center">
+        <img src="media/11maldives.png">
+        <img src="media/11lasvegas.png">
+        <img src="media/11spain.png">
+        <img src="media/11japan.png">
+        <img src="media/11hawaii.png">
+    </div>
+
+    <div class="tile-container">
+        <% packages.forEach(package => { %>
+        <div class="tile">
+            <img src="/media/<%= package.PkgImg %>" alt="hawaii">
+            <p>
+                <%= package.PkgName %>
+            </p>
+            <p style="font-size: 18px;">
+                <% const startDate = new Date(package.PkgStartDate);
+                    const endDate = new Date(package.PkgEndDate);
+                    const options = { month: 'short', day: '2-digit', year: 'numeric'};
+                    const formattedStartDate = startDate.toLocaleDateString('en-US', options);
+                    const formattedEndDate = endDate.toLocaleDateString('en-US', options);
+                    const sed = `${formattedStartDate} - ${formattedEndDate}`;
+                %>
+                <%= sed %>
+                <br>
+                <br>
+                <%= package.PkgDesc %>
+                <br>
+                <br>
+                $<%= package.PkgBasePrice %>
+                <br>
+                <%= package.PkgDur %>
+                <button onclick="addToCart('<%= package.PkgName %>', '<%= package.PkgImg %>', '<%= package.PkgBasePrice %>')">
+                    Add to Cart
+                </button>
+            </p>
+        </div>
+        <% }); %>
+    </div>
+</br>
+</br>
+
+<script>
+    let cart = [];
+    function addToCart(name, image, price) {
+            const product = {
+                name: name,
+                image: image,
+                price: price,
+            };
+
+            cart.push(product);
+
+            console.log('Product added to cart:', product);
+            console.log('Cart:', cart);
+        }
+</script>
+</body>
+
+</html>
