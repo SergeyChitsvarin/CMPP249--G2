@@ -18,3 +18,33 @@
         <!--images-->
     </header>
     <body>
+    <nav>
+        <ul type="none" class="menu">
+            <%if (pageType == "homePage") { %>
+                <li class="menuItem"><a href="/" class="active">Home Page</a> </li>
+            <% } else { %>
+                <li class="menuItem"><a href="/" class="inactive">Home Page</a> </li>
+            <% } %>
+            <%if (pageType == "contactPage") { %>
+                <li class="menuItem"><a href="/contact" class="active">Contact Us</a> </li>
+            <% } else { %>
+                <li class="menuItem"><a href="/contact" class="inactive">Contact Us</a> </li>
+            <% } %>
+            <%if (pageType == "G2_Vacationpackage") { %>
+                <li class="menuItem"><a href="/packages" class="active">Vacation Packages</a> </li>
+            <% } else { %>
+                <li class="menuItem"><a href="/packages" class="inactive">Vacation Packages</a> </li>
+            <% } %>
+            <%if (username) { %>
+                <%if (pageType == "profilePage") { %>
+                    <li class="menuItem"><a href="/profile" class="active">Your Profile</a> </li>
+                <% } else { %>
+                    <li class="menuItem"><a href="/profile" class="inactive">Your Profile</a> </li>
+                <% } %>
+            <%} else if (pageType == "custregister") { %>
+                <li class="menuItem"><a href="/registration" class="active">Register</a> </li>
+            <% } else { %>
+                <li class="menuItem"><a href="/registration" class="inactive">Register</a> </li>
+            <% } %>
+        </ul>
+    </nav>

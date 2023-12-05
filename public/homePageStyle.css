@@ -12,7 +12,6 @@ body, header{
     margin:0;
     padding:0;
     margin-top:0;
-    overflow:hidden;
 }
 /*ttps://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black
 */
@@ -84,10 +83,8 @@ li.menuItem a{display: block; color: white; text-align: center; padding: 14px 30
 .headText img {
     height: 200px;
     object-fit: cover;
-    position: absolute;
-    top: 0px;
 }
-.headText h1 {position: relative; text-align: center;}
+.headText h1 {position: relative; text-align: center; top:-180px; left:5%}
 
 .slideshow{position: relative;height:50%; width:50%; float:right;}
 
