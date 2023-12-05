@@ -3,11 +3,10 @@
     <head>
         <title>Travel Experts</title>
 
-        <link rel="stylesheet" href="../public/homePageStyle.css" />
+        <link rel="stylesheet" href="homePageStyle.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Ephesis&display=swap" rel="stylesheet" />
-        
         <script type = "text/javascript">
             
             function validateLogin(loginForm){
@@ -50,35 +49,37 @@
                     con.query(querytext, function (err, result, fields) {
                         if (err) throw err;
                         if(!result.length){
-                            return 1
+                            return true;
                         } else{
-                            return 0
+                            return false;
                         }
                     });
                 });
             }
             function validateForm(myform){
+                hideValPopup();
 				const checkForms = [];
                 var errorMessage = "";
-				checkForms.Push(document.getElementById("pcode"));
-				checkForms.Push(document.getElementById("fname"));
-                checkForms.Push(document.getElementById("lname"));
-                checkForms.Push(document.getElementById("city"));
-                checkForms.Push(document.getElementById("prov"));
-                checkForms.Push(document.getElementById("streetaddress"));
-                checkForms.Push(document.getElementById("custemail"));
-                checkForms.Push(document.getElementById("custtel"));
-                checkForms.Push(document.getElementById("username"));
-                checkForms.Push(document.getElementById("password"));
-                checkForms.Push(document.getElementById("confpassword"));
-                for(const elem of checkForms){ // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+				checkForms.push(document.getElementById("pcode"));
+				checkForms.push(document.getElementById("firstname"));
+                checkForms.push(document.getElementById("lastname"));
+                checkForms.push(document.getElementById("city"));
+                checkForms.push(document.getElementById("streetaddress"));
+                checkForms.push(document.getElementById("custemail"));
+                checkForms.push(document.getElementById("custtel"));
+                checkForms.push(document.getElementById("username"));
+                checkForms.push(document.getElementById("password"));
+                checkForms.push(document.getElementById("confpassword"));
+                for(var elem of checkForms){ // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+                    console.log(elem);
                     if (elem.value == ""){
+                       
                         errorMessage += "Please enter a " + elem.name + ".<br>";
                         elem.style.borderColor = "red";
 					}
                 }
                 if(!validateUsername(document.getElementById("username").value)){
-                    errorMessage += "That username is already in use. Please select<br>";
+                    errorMessage += "That username is already in use. Please select another.<br>";
                 }
                 var postalField = document.getElementById("pcode");
 				var exp = new RegExp(/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i); // regex with canadian postal code validation
@@ -94,14 +95,20 @@
                     errorMessage += "Please enter a valid 10 digit phone number.<br>";
 					phoneField.style.borderColor = "red";
                 }
-
+                exp = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/)
+                var passwordField = document.getElementById("password")
+                if(!exp.test(passwordField)){
+                    errorMessage += "Your password is incorrectly formatted. Enter a different password.<br>";
+					passwordField.style.borderColor = "red";
+                }
+                
 				if (!errorMessage)
 				{
 					return confirm("Continue submitting?");
 				}
 				else
 				{
-					document.getElementById("message").innerText = errorMessage;
+					drawValPopup(errorMessage);
 					return false;
 				}
 			}
@@ -146,11 +153,17 @@
                     document.getElementById("requirementspopup").style.visibility = 'hidden';
                 }
             }
-			
-		</script>
+            function drawValPopup(errStr){
+                document.getElementById("validationpopup").style.visibility = 'visible';
+                document.getElementById("requirementspopup").innerHTML = errStr;
+                }
 
+            function hideValPopup(){
+                document.getElementById("validationpopup").style.visibility = 'hidden';
+            }	
+		</script>
     </head>
-    <div class="screenblur" id="screenblur"></div>
+
     <header>
         
         <div class="headText">
@@ -161,6 +174,7 @@
         <!--images-->
     </header>
     <body>
+         <div class="screenblur" id="screenblur"></div>
         
         <nav>
             <ul type="none" class="menu">
@@ -181,7 +195,7 @@
         <div class="popup" id="registerpopup">
             <button class="closebutton" onclick="closeRegister()">&#10006;</button>
             <h1>Register</h1>
-            <form method="get" action="bouncer.php" class="formClass" onSubmit="return validateForm(this);">
+            <form method="" action="#" class="formClass" onSubmit="return validateForm(this);">
 				<input type="text" id="firstname" name="First name" placeholder="First Name" onfocus="displayText('pfname')"/>
                 <input type="text" id="lastname" name="Last name" placeholder="Last Name" onfocus="displayText('plname')"/><br>
                 <input type="text" id="city" name="City" placeholder="City" onfocus="displayText('pfname')"/>
@@ -202,9 +216,8 @@
 				<button type="reset" onclick="return confirm('Did you really want to reset?')">Reset</button>
                 <br><p class="loginlink"><i>Already have an account? <a href="#" onclick="loginScreen()">Login Here</a></i></p>
             </form>
-            <div class="requirementspopup" id="requirementspopup">
-                
-            </div>
+            <div class="requirementspopup" id="requirementspopup"></div>
+            <div class="validationpopup" id="validationpopup">test<br><br></div>
         </div>
         
         <h3></h3>
