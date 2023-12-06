@@ -1,5 +1,28 @@
 <%- include('partials/mainHeader') %>
 <div class="pageContent">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var slideNum = 0;
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlide");
+
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideNum++;
+            if (slideNum > slides.length) {
+                slideNum = 1;
+            }
+
+            slides[slideNum - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+        });
+    </script>
     <div class="slideshow">
         <div class="mySlide">
             <p>Explore the wild</p>
